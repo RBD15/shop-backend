@@ -25,7 +25,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Install
-        uses: npm ciw
+        uses: npm ci
       - name: run e2e
         run: npm test:e2e:ci
         env:
