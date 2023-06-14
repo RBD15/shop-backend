@@ -4,8 +4,10 @@ const { config } = require('../config/config');
 const setupModels = require('./models');
 
 const options = {
-  dialect: 'postgres',
-  logging: config.isProd ? false : console.log,
+  dialect: 'mysql',
+  logging: config.env === 'dev'
+  // logging: config.env === 'dev' ? false : console.log,
+
 }
 
 if (config.isProd) {

@@ -1,0 +1,37 @@
+name: API CI
+
+on:
+  push:
+    branches: ['*']
+  pull_request:
+    branches: ['*']
+
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    container:
+      image: node:16
+
+    services:
+      mysql-e2e:
+        image: mysql:latest
+        ports:
+          - 3306:3306
+        env:
+          MYSQL_DB: shop-test
+          MYSQL_USER: root
+          MYSQL_PASSWORD:
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install
+        uses: npm ciw
+      - name: run e2e
+        run: npm test:e2e:ci
+        env:
+          PORT: 3000
+          DATABASE_URL: mysql://root:@mysql-e2e:3306/shop-test
+          API_KEY: 79823
+          JWT_SECRET: my_dog_1234
+          SMTP_EMAIL: your@email.com
+          SMTP_PASSWORD: password-email

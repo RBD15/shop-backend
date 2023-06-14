@@ -1,0 +1,1284 @@
+{
+  "info": {
+    "name": "Platzi Store API",
+    "_postman_id": "63a8903e-9532-441e-b14a-f8c82e3e1494",
+    "description": "",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "init",
+      "description": "",
+      "item": [
+        {
+          "id": "94fcf056-ec97-4c4a-a11b-56780f658c0b",
+          "name": "hello",
+          "request": {
+            "url": {
+              "host": "{{Server 1}}",
+              "path": [
+                ""
+              ]
+            },
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "disabled": false
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "header": [],
+              "body": "any",
+              "code": 200,
+              "name": "Response_200",
+              "id": "a8ac3a29-2f3e-4511-bdeb-0b87cbc9ee4b"
+            }
+          ]
+        },
+        {
+          "id": "35b4eca1-9a39-47e7-a442-a4afc006fdd5",
+          "name": "new-route",
+          "request": {
+            "url": {
+              "host": "{{Server 1}}",
+              "path": [
+                "nueva-ruta"
+              ]
+            },
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "disabled": false
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "header": [],
+              "body": "any",
+              "code": 200,
+              "name": "Response_200",
+              "id": "3647c19a-a326-4dbc-a6ad-76ffd9e6b664"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "auth",
+      "description": "",
+      "item": [
+        {
+          "id": "88d098cb-049d-48f4-bb90-742239a41ca8",
+          "name": "login",
+          "request": {
+            "url": {
+              "host": "{{Server 1}}",
+              "path": [
+                "api/v1/auth/login"
+              ]
+            },
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "disabled": false
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"email\": \"admin@mail.com\",\n\t\"password\": \"admin123\"\n}",
+              "disabled": false
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "header": [],
+              "body": "any",
+              "code": 200,
+              "name": "Response_200",
+              "id": "26fea53a-25f1-4934-a191-3ec92d3c4710"
+            }
+          ]
+        },
+        {
+          "id": "48a00f1a-e4a6-49cf-9608-60bcc6e96f5e",
+          "name": "recovery",
+          "request": {
+            "url": {
+              "host": "{{Server 1}}",
+              "path": [
+                "api/v1/auth/recovery"
+              ]
+            },
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "disabled": false
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"email\": \"admin@mail.com\"\n}",
+              "disabled": false
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "header": [],
+              "body": "any",
+              "code": 200,
+              "name": "Response_200",
+              "id": "628be064-681a-4516-abcb-e7f0393be69e"
+            }
+          ]
+        },
+        {
+          "id": "36d64b21-bfa3-45aa-9b25-9d3d04f56d91",
+          "name": "change-password",
+          "request": {
+            "url": {
+              "host": "{{Server 1}}",
+              "path": [
+                "api/v1/auth/change-password"
+              ]
+            },
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "disabled": false
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"token\": \"---\",\n\t\"email\": \"admin@mail.com\"\n}",
+              "disabled": false
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "header": [],
+              "body": "any",
+              "code": 200,
+              "name": "Response_200",
+              "id": "0ac0d94c-d5d4-43b5-bad6-99c21d1888ed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "categories",
+      "description": "",
+      "item": [
+        {
+          "id": "1b905b49-0b84-4104-8941-a85d85adbe8c",
+          "name": "getAll",
+          "request": {
+            "url": {
+              "host": "{{Server 1}}",
+              "path": [
+                "api/v1/categories/"
+              ]
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "<<token>>",
+                "scope": ""
+              }
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "disabled": false
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "header": [],
+              "body": "any",
+              "code": 200,
+              "name": "Response_200",
+              "id": "6ac1067b-4218-4e1f-aac2-20ada07afa27"
+            }
+          ]
+        },
+        {
+          "id": "71366f30-4801-4b77-90bb-290010248094",
+          "name": "getOne",
+          "request": {
+            "url": {
+              "host": "{{Server 1}}",
+              "path": [
+                "api/v1/categories/1"
+              ]
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "<<token>>",
+                "scope": ""
+              }
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "disabled": false
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "header": [],
+              "body": "any",
+              "code": 200,
+              "name": "Response_200",
+              "id": "daf218fd-e8f2-4538-ae71-c94a0ce80adf"
+            }
+          ]
+        },
+        {
+          "id": "89f0c64f-d7f9-4f74-bd0d-9d192c9cb720",
+          "name": "create",
+          "request": {
+            "url": {
+              "host": "{{Server 1}}",
+              "path": [
+                "api/v1/categories/"
+              ]
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "<<token>>",
+                "scope": ""
+              }
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "disabled": false
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"New Category\",\n  \"image\": \"https://api.lorem.space/image/game?w=150&h=220\"\n}",
+              "disabled": false
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "header": [],
+              "body": "any",
+              "code": 200,
+              "name": "Response_200",
+              "id": "4ca95ba1-cee5-41b5-ab67-1f1d86e4f647"
+            }
+          ]
+        },
+        {
+          "id": "7ae964ce-f969-4030-914a-f73c28a93f28",
+          "name": "update",
+          "request": {
+            "url": {
+              "host": "{{Server 1}}",
+              "path": [
+                "api/v1/categories/3"
+              ]
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "<<token>>",
+                "scope": ""
+              }
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "disabled": false
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"name\": \"nuevo\"\n}",
+              "disabled": false
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "header": [],
+              "body": "any",
+              "code": 200,
+              "name": "Response_200",
+              "id": "4d270c0a-8513-43eb-94aa-d60c3f2e9b8c"
+            }
+          ]
+        },
+        {
+          "id": "caf0f696-3735-4e06-b513-4d948cbc1d3a",
+          "name": "delete",
+          "request": {
+            "url": {
+              "host": "{{Server 1}}",
+              "path": [
+                "api/v1/categories/3"
+              ]
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "<<token>>",
+                "scope": ""
+              }
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "disabled": false
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "header": [],
+              "body": "any",
+              "code": 200,
+              "name": "Response_200",
+              "id": "e598b281-32df-49a2-8c12-711a1a3e0621"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "customers",
+      "description": "",
+      "item": [
+        {
+          "id": "df1b3d46-8eab-4a9b-a1d3-a4cfe38a7d94",
+          "name": "getAll",
+          "request": {
+            "url": {
+              "host": "{{Server 1}}",
+              "path": [
+                "api/v1/customers/"
+              ]
+            },
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "disabled": false
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "header": [],
+              "body": "any",
+              "code": 200,
+              "name": "Response_200",
+              "id": "b613e9ea-02c8-4e91-a587-7f909156fd16"
+            }
+          ]
+        },
+        {
+          "id": "a5870bc6-a3de-4ae2-8208-76ae83dce809",
+          "name": "create",
+          "request": {
+            "url": {
+              "host": "{{Server 1}}",
+              "path": [
+                "api/v1/customers/"
+              ]
+            },
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "disabled": false
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"name\": \"Valentina\",\n\t\"lastName\": \"Molina\",\n\t\"phone\": \"121212\",\n\t\"user\": {\n\t\t\"email\": \"customer@gmail.com\",\n\t\t\"password\": \"12345678\"\n\t}\n}",
+              "disabled": false
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "header": [],
+              "body": "any",
+              "code": 200,
+              "name": "Response_200",
+              "id": "769efb6a-0c25-4e19-8e6f-125d26a7cecb"
+            }
+          ]
+        },
+        {
+          "id": "aae85306-f043-433b-8c54-d00776fd6746",
+          "name": "update",
+          "request": {
+            "url": {
+              "host": "{{Server 1}}",
+              "path": [
+                "api/v1/customers/1"
+              ]
+            },
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "disabled": false
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"name\": \"Nicolas\"\n}",
+              "disabled": false
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "header": [],
+              "body": "any",
+              "code": 200,
+              "name": "Response_200",
+              "id": "12194625-8bd5-4784-8fff-c925aeeccaf3"
+            }
+          ]
+        },
+        {
+          "id": "19f43615-20ba-4e32-95de-d22acec112e0",
+          "name": "delete",
+          "request": {
+            "url": {
+              "host": "{{Server 1}}",
+              "path": [
+                "api/v1/customers/1"
+              ]
+            },
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "disabled": false
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"name\": \"Nicolas\"\n}",
+              "disabled": false
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "header": [],
+              "body": "any",
+              "code": 200,
+              "name": "Response_200",
+              "id": "9c40cdb9-3f4b-4900-a81e-3a34f5d24365"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "orders",
+      "description": "",
+      "item": [
+        {
+          "id": "a5ee1efa-7108-4141-8bd3-09bfdcee8f1c",
+          "name": "getOne",
+          "request": {
+            "url": {
+              "host": "{{Server 1}}",
+              "path": [
+                "api/v1/orders/1"
+              ]
+            },
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "disabled": false
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "header": [],
+              "body": "any",
+              "code": 200,
+              "name": "Response_200",
+              "id": "c1a5a090-bd51-4606-9927-a091ef100898"
+            }
+          ]
+        },
+        {
+          "id": "48b95844-dff3-48c0-83c1-1565fd986b5b",
+          "name": "add item",
+          "request": {
+            "url": {
+              "host": "{{Server 1}}",
+              "path": [
+                "api/v1/orders/add-item"
+              ]
+            },
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "disabled": false
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"orderId\": 1,\n  \"productId\": 2,\n\t\"amount\": 2\n}",
+              "disabled": false
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "header": [],
+              "body": "any",
+              "code": 200,
+              "name": "Response_200",
+              "id": "18c5d3b0-20a4-4c4e-92c9-e17bf67a16bd"
+            }
+          ]
+        },
+        {
+          "id": "0b6bf701-b2ed-4e5f-b2ac-904c08b2c28b",
+          "name": "create",
+          "request": {
+            "url": {
+              "host": "{{Server 1}}",
+              "path": [
+                "api/v1/orders/"
+              ]
+            },
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "disabled": false
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customerId\": 1\n}",
+              "disabled": false
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "header": [],
+              "body": "any",
+              "code": 200,
+              "name": "Response_200",
+              "id": "01bed54b-83b0-4a45-b489-96611fe86107"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "products",
+      "description": "",
+      "item": [
+        {
+          "id": "473921bc-af53-4f68-81eb-25f1311c6d6a",
+          "name": "getAll",
+          "request": {
+            "url": {
+              "host": "{{Server 1}}",
+              "path": [
+                "api/v1/products/"
+              ]
+            },
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "disabled": false
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "header": [],
+              "body": "any",
+              "code": 200,
+              "name": "Response_200",
+              "id": "5873155a-4fc9-4a71-9e89-b744a0839191"
+            }
+          ]
+        },
+        {
+          "id": "f52bcb0e-447b-4da2-926b-c9e35546e657",
+          "name": "getOne",
+          "request": {
+            "url": {
+              "host": "{{Server 1}}",
+              "path": [
+                "api/v1/products/10"
+              ]
+            },
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "disabled": false
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "header": [],
+              "body": "any",
+              "code": 200,
+              "name": "Response_200",
+              "id": "532a3279-12c4-4519-98e1-7e86a43cd6e1"
+            }
+          ]
+        },
+        {
+          "id": "bb074f99-dd10-4c64-9467-c33463d21d97",
+          "name": "pagination",
+          "request": {
+            "url": {
+              "host": "{{Server 1}}",
+              "path": [
+                "api/v1/products/"
+              ],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "2",
+                  "description": "",
+                  "disabled": false
+                },
+                {
+                  "key": "offset",
+                  "value": "0",
+                  "description": "",
+                  "disabled": false
+                }
+              ]
+            },
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "disabled": false
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "header": [],
+              "body": "any",
+              "code": 200,
+              "name": "Response_200",
+              "id": "efe20360-33fc-455b-b457-a491b9bc00d8"
+            }
+          ]
+        },
+        {
+          "id": "1cb1da04-b3e1-4c10-bbb6-f5e53894b06b",
+          "name": "create",
+          "request": {
+            "url": {
+              "host": "{{Server 1}}",
+              "path": [
+                "api/v1/products/"
+              ]
+            },
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "disabled": false
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"New Product\",\n  \"price\": 10,\n  \"description\": \"A description\",\n  \"categoryId\": 1,\n  \"image\": \"https://api.lorem.space/image/game?w=150&h=220\"\n}",
+              "disabled": false
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "header": [],
+              "body": "any",
+              "code": 200,
+              "name": "Response_200",
+              "id": "d765c701-f3de-4dba-8101-5bb9e285385e"
+            }
+          ]
+        },
+        {
+          "id": "bfdfdc3b-c44c-405d-a7b1-dff1f738fae0",
+          "name": "update",
+          "request": {
+            "url": {
+              "host": "{{Server 1}}",
+              "path": [
+                "api/v1/products/10"
+              ]
+            },
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "disabled": false
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Change title\",\n  \"price\": 100\n}",
+              "disabled": false
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "header": [],
+              "body": "any",
+              "code": 200,
+              "name": "Response_200",
+              "id": "e59c65ff-756c-43bc-8ecb-56e15e4b4ed2"
+            }
+          ]
+        },
+        {
+          "id": "a119f600-c10f-41a1-8164-b7890b646e3b",
+          "name": "delete",
+          "request": {
+            "url": {
+              "host": "{{Server 1}}",
+              "path": [
+                "api/v1/products/10"
+              ]
+            },
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "disabled": false
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "header": [],
+              "body": "any",
+              "code": 200,
+              "name": "Response_200",
+              "id": "303bdb29-e1de-4975-9e95-42fe8b01e0ba"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "profile",
+      "description": "",
+      "item": [
+        {
+          "id": "ff7f01ff-85c9-4fea-83f6-47adbe119b7a",
+          "name": "profile",
+          "request": {
+            "url": {
+              "host": "{{Server 1}}",
+              "path": [
+                "api/v1/profile/my-orders"
+              ]
+            },
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "<<token>>",
+                "scope": ""
+              }
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "disabled": false
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "header": [],
+              "body": "any",
+              "code": 200,
+              "name": "Response_200",
+              "id": "7f3f6828-e2cd-483b-8bef-aab1aa22780f"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "users",
+      "description": "",
+      "item": [
+        {
+          "id": "2d0f7a7d-1eb7-49ef-a26e-d569fdb04d59",
+          "name": "getAll",
+          "request": {
+            "url": {
+              "host": "{{Server 1}}",
+              "path": [
+                "api/v1/users/"
+              ]
+            },
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "disabled": false
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "header": [],
+              "body": "any",
+              "code": 200,
+              "name": "Response_200",
+              "id": "2faddd47-c8e8-4632-8ccc-91f2fbc483b4"
+            }
+          ]
+        },
+        {
+          "id": "cab35442-946c-48fc-afd6-9f3b8bc3b10d",
+          "name": "getOne",
+          "request": {
+            "url": {
+              "host": "{{Server 1}}",
+              "path": [
+                "api/v1/users/1212"
+              ]
+            },
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "disabled": false
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "header": [],
+              "body": "any",
+              "code": 200,
+              "name": "Response_200",
+              "id": "f2c6aef9-8143-4d13-856f-824d127376f4"
+            }
+          ]
+        },
+        {
+          "id": "9bd2a097-a120-4e48-bd32-3fdf77e68bd6",
+          "name": "create",
+          "request": {
+            "url": {
+              "host": "{{Server 1}}",
+              "path": [
+                "api/v1/users/"
+              ]
+            },
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "disabled": false
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"email\": \"admin@mail.com\",\n\t\"password\": \"admin123\",\n\t\"role\": \"admin\"\n}",
+              "disabled": false
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "header": [],
+              "body": "any",
+              "code": 200,
+              "name": "Response_200",
+              "id": "31812bbf-bb7f-4254-b4c0-25c99d716e50"
+            }
+          ]
+        },
+        {
+          "id": "e8f0ac4a-bdbc-45f3-a0c9-bef1e3b157ef",
+          "name": "update",
+          "request": {
+            "url": {
+              "host": "{{Server 1}}",
+              "path": [
+                "api/v1/users/1"
+              ]
+            },
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "disabled": false
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"name\": \"Nicolas\"\n}",
+              "disabled": false
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "header": [],
+              "body": "any",
+              "code": 200,
+              "name": "Response_200",
+              "id": "d2999fb8-4fa2-4594-97ea-11a98bc012cf"
+            }
+          ]
+        },
+        {
+          "id": "b1305d06-714f-4e44-8f98-d4d60a84ca0c",
+          "name": "delete",
+          "request": {
+            "url": {
+              "host": "{{Server 1}}",
+              "path": [
+                "api/v1/users/1"
+              ]
+            },
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": "",
+                "disabled": false
+              },
+              {
+                "key": "Accept",
+                "value": "*/*",
+                "disabled": false
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"name\": \"Nicolas\"\n}",
+              "disabled": false
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "header": [],
+              "body": "any",
+              "code": 200,
+              "name": "Response_200",
+              "id": "ea57bdeb-fb87-452e-b6a3-d032cc71ba20"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "Server 1",
+      "value": "DefaultParameterValue"
+    },
+    {
+      "key": "Server 11",
+      "value": "DefaultParameterValue"
+    }
+  ]
+}
